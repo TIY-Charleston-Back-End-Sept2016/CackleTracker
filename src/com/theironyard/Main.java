@@ -79,11 +79,11 @@ public class Main {
                     }
                     else if (!user.password.equals(userFromDb.password)) {
                         Spark.halt(403);
-                        return null;
+                        return "";
                     }
                     Session session = request.session();
                     session.attribute("email", user.email);
-                    return null;
+                    return "";
                 }
         );
 
@@ -111,7 +111,7 @@ public class Main {
                     JsonParser parser = new JsonParser();
                     Cackle cackle = parser.parse(body, Cackle.class);
                     insertCackle(conn, cackle, user.id);
-                    return null;
+                    return "";
                 }
         );
 
