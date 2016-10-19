@@ -14,10 +14,21 @@ var routerController = function(){
 
    if(currentHash.length === 0) { return showHomePage() }
 
-   switch(currentHash){
+   var currentHashComponents = currentHash.split('/')
+   console.log(currentHashComponents)
+
+   var currentHashPrefix = currentHashComponents[0]
+   var currentHashSuffix = currentHashComponents[1]
+
+   switch(currentHashPrefix){
       case "auth":
          showAuthPage()
          break;
+
+      case "user-profile":
+         showUserProfile(currentHashSuffix);
+         break;
+
       default:
          document.querySelector('#app-container').innerHTML = "<h1 class='bg-warning'>PAGE NOT FOUND</h1>";
    }
@@ -34,17 +45,10 @@ var authenticateUser = function(evt){
    }
 
    console.log('to server:', JSON.stringify(dataForServer))
-   var configObj = {
-      url: '/login',
-      data: JSON.stringify(dataForServer),
-      headers: {
-         "Content-Type": "application/json"
-      },
-      dataType: 'json'
-   }
 
-   $.post( configObj ).then(function(godKnowsWhat){
-         console.log(godKnowsWhat)
+   $.post( '/login', JSON.stringify(dataForServer) ).then(function(godKnowsWhat){
+      console.log('Success !!!!')
+      window.location.hash = "user-profile/"+dataForServer.email
    })
 
 }
