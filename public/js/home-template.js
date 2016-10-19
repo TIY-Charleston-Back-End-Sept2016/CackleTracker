@@ -6,7 +6,7 @@ var showHomePage = function(){
    bigStr +=       '<div class="container">'
    bigStr +=          '<h1>Kaity Cackler</h1>'
    bigStr +=          '<p>Tracklin\' the cacklin\' of our beloved</p>'
-   bigStr +=          '<p><a class="btn btn-primary btn-lg" href="#login" role="button">Login</a></p>'
+   bigStr +=          '<p><a class="btn btn-primary btn-lg" href="#auth" role="button">Login</a></p>'
    bigStr +=       '</div>'
    bigStr +=    '</div>'
    bigStr +=    '<div class="container-fluid text-center about-site">'
