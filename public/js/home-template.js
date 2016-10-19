@@ -1,0 +1,32 @@
+
+var showHomePage = function(){
+   bigStr =''
+   bigStr += '<div id="app-container" class="container-fluid;">'
+   bigStr +=    '<div class="jumbotron splash">'
+   bigStr +=       '<div class="container">'
+   bigStr +=          '<h1>Kaity Cackler</h1>'
+   bigStr +=          '<p>Tracklin\' the cacklin\' of our beloved</p>'
+   bigStr +=          '<p><a class="btn btn-primary btn-lg" href="#login" role="button">Login</a></p>'
+   bigStr +=       '</div>'
+   bigStr +=    '</div>'
+   bigStr +=    '<div class="container-fluid text-center about-site">'
+   bigStr +=       '<h2>How it Works</h2>'
+   bigStr +=       '<div class="row">'
+   bigStr +=          '<div class="col-sm-4">'
+   bigStr +=             '<i class="fa fa-gavel fa-5x" aria-hidden="true"></i>'
+   bigStr +=             '<h3>Rank the Cackle</h3>'
+   bigStr +=          '</div>'
+   bigStr +=          '<div class="col-sm-4">'
+   bigStr +=             '<i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>'
+   bigStr +=             '<h3>Record the Time</h3>'
+   bigStr +=          '</div>'
+   bigStr +=          '<div class="col-sm-4">'
+   bigStr +=             '<i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>'
+   bigStr +=             '<h3>Tell us the Reason</h3>'
+   bigStr +=          '</div>'
+   bigStr +=       '</div>'
+   bigStr +=    '</div>'
+   bigStr += '</div>'
+
+   document.querySelector('#app-container').innerHTML = bigStr
+}

@@ -1,0 +1,31 @@
+@import "./imports/_normalize.scss";
+
+*{ box-sizing: border-box }
+img {
+   width: 100%;
+   display: block;
+}
+
+#app-container{
+   .splash{
+      color: #fff;
+      background: #948E99; /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #948E99 , #2E1437); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #948E99 , #2E1437); /* W3C, IE 10+/ */
+   }
+
+   .about-site{
+      h2{font-size: 42px; margin: 0; padding-bottom: 30px;}
+       .row{
+         color: #fff;
+         > *{
+            position: relative;
+            
+         }
+         > *:nth-child(1){background: #1BA39C; padding: 40px;}
+         > *:nth-child(2){background: #3498DB; padding: 40px;}
+         > *:nth-child(3){background: #F4B350; padding: 40px;}
+   }
+
+   }
+}
