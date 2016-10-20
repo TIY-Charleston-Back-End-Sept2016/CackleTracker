@@ -18,5 +18,4 @@ var showAuthPage = function(){
    bigHTMLStr += '</div>'
 
    document.querySelector('#app-container').innerHTML = bigHTMLStr
-   document.querySelector('#auth-form').addEventListener('submit', authenticateUser )
 }
