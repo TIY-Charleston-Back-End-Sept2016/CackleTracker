@@ -47,14 +47,14 @@ public class Main {
 
     public static ArrayList<Cackle> selectCackles(Connection conn) throws SQLException {
         ArrayList<Cackle> cackles = new ArrayList<>();
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM cackles INNER JOIN users ON cackles.user_id = users.id");
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM cackles");
         ResultSet results = stmt.executeQuery();
         while (results.next()) {
-            int id = results.getInt("cackles.id");
-            String cackler = results.getString("cackles.cackler");
-            String cause = results.getString("cackles.cause");
-            String time = results.getString("cackles.time");
-            int rating = results.getInt("cackles.rating");
+            int id = results.getInt("id");
+            String cackler = results.getString("cackler");
+            String cause = results.getString("cause");
+            String time = results.getString("time");
+            int rating = results.getInt("rating");
             cackles.add(new Cackle(id, cackler, cause, time, rating));
         }
         return cackles;
@@ -104,13 +104,13 @@ public class Main {
         Spark.post(
                 "/add-cackle",
                 (request, response) -> {
-                    Session session = request.session();
-                    String email = session.attribute("email");
-                    User user = selectUser(conn, email);
+                    //Session session = request.session();
+                    //String email = session.attribute("email");
+                    //User user = selectUser(conn, email);
                     String body = request.body();
                     JsonParser parser = new JsonParser();
                     Cackle cackle = parser.parse(body, Cackle.class);
-                    insertCackle(conn, cackle, user.id);
+                    insertCackle(conn, cackle, 0);
                     return "";
                 }
         );
